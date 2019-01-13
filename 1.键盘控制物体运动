@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class ball : MonoBehaviour {
+public class ball : MonoBehaviour {         //代码给运动物体
 
-    private Rigidbody rd;     //设置私有的刚体组件；
+    private Rigidbody rd;                   //设置私有的刚体组件；
     public int s=10;          
 	// Use this for initialization
 	void Start () {
