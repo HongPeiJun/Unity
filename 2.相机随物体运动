@@ -10,7 +10,7 @@ public class FollowTarget : MonoBehaviour {              //代码给相机
 	// Use this for initialization
 	void Start () {
 
-        offset=transform.position - player.position;     //相机的当前位置－运动物体的当前位置=当前向量
+        offset=transform.position - player.position;     //相机的当前位置－运动物体的当前位置=当前向量差
 
 	}
 	
