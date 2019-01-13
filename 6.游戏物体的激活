@@ -1,0 +1,5 @@
+ public GameObject WinText;
+ 
+ if (score == 11) {
+                WinText.SetActive(true);      //激活游戏物体
+            }
