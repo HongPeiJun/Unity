@@ -1,0 +1,40 @@
+一,基本碰撞和触发器的基本概念
+   1>什么是碰撞器
+       碰撞器是一群组件，它包含了很多种类，比如： Box Collider 盒碰撞器、Capsule Collider 胶囊碰撞器、Mesh Collider 网格碰撞器、Sphere Collider 球碰撞器  等等这一类组件，这些碰撞器应用的场合不同，但都必须加到GameObjecet身上。
+   2>什么是触发器
+       所谓触发器，只需要在检视面板中的碰撞器组件中勾选IsTrigger属性选择框。
+   3>区别：
+       碰撞器
+     （1）碰撞器有碰撞效果
+     （2）IsTrigger=false
+     （3）碰撞信息检测
+           MonoBehaviour.OnCollisionEnter(Collision collision) 
+           MonoBehaviour.OnCollisionExit(Collision collision) 
+           MonoBehaviour.OnCollisionStay(Collision collision) 
+      触发器
+    （1）触发器没有碰撞效果
+    （2）IsTrigger=true;
+    （3）触发信息检测：
+           MonoBehaviour.OnTriggerEnter(Collider collider)
+           MonoBehaviour.OnTriggerExit(Collider collider)
+           MonoBehaviour.OnTriggerStay(Collider collider)
+二,触发和碰撞的信息检测方法
+  1>触发信息检测：
+      1.MonoBehaviour.OnTriggerEnter( Collider other )当进入触发器
+      2.MonoBehaviour.OnTriggerExit( Collider other )当退出触发器
+      3.MonoBehaviour.OnTriggerStay( Collider other )当逗留触发器
+  2>碰撞信息检测：
+     1.MonoBehaviour.OnCollisionEnter( Collision collisionInfo ) 当进入碰撞器
+     2.MonoBehaviour.OnCollisionExit( Collision collisionInfo ) 当退出碰撞器
+     3.MonoBehaviour.OnCollisionStay( Collision collisionInfo )  当逗留碰撞器
+以上这六个接口都是MonoBehaviour的函数，由于我们新建的脚本都继承这个MonoBehaviour这个类。所以我们的脚本里面可以覆写这六个函数。
+我们就需要完善的了解一下有关碰撞器方面的知识啊。我把我们还得了解的概念列举如下：
+
+1.Static Collider 静态碰撞器
+   指的是没有附加刚体而附加了碰撞器的游戏对象。这类对象会保持静止或很轻微的移动。这对于环境模型十分好用，比如刚体和墙面碰撞时而不会移动。
+2.Rigidbody Collider 刚体碰撞器
+   指的是附加了刚体和碰撞器的游戏对象。
+3.Kinematic Rigidbody Collider 运动学刚体碰撞器
+   在第2点得基础上勾选了刚体组件中的IsKinematic属性，如果要移动这类对象，就只能修改它的Transform，而不是用力。这类游戏对象还有许多其他的独特的使用情景。
+
+这三种碰撞器如果勾选了IsTrigger复选框，就变成了相应的触发器了。
