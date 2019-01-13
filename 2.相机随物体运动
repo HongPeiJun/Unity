@@ -1,0 +1,18 @@
+public class FollowTarget : MonoBehaviour {              //代码给相机
+
+    public Transform player;
+    private Vector3 offset;                              //设置私有的向量变量offset；
+
+
+	// Use this for initialization
+	void Start () {
+
+        offset=transform.position - player.position;     //相机的当前位置－运动物体的当前位置=当前向量
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        transform.position = player.position + offset;     //每一帧相机的位置变量增加offset的变量，即相机相对运动物体位置不变；
+	}
+}
