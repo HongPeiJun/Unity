@@ -25,7 +25,7 @@ public class ball : MonoBehaviour {
         //print(name);     //print可以把一个字符串输出显示到控制台
 
         if (collision.collider.tag == "Pick up") {
-            Destroy(collision.collider.gameObject);     //删除碰撞到的游戏物体
+            Destroy(collision.collider.gameObject);     //删除碰撞到的游戏物体，gameObject为游戏物体
         }
     }
 }
